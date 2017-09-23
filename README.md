@@ -10,7 +10,7 @@ La clase Stopwatch dispone de dos modos de funcionamiento. Uno es mediante el us
 
 El otro modo de funcionamiento es mediante el uso de la función `Measure()`, que recibe como parámetro una funcion `void(*)()` para medir. Stopwatch registra el tiempo empleado para la ejecución de la función pasada como parámetro. 
 
-En cualquiera de los dos casos, el tiempo registrado se obtiene mediante `GetElapsed()` y `GetFrequency()` que obtienen, respectivamente, el tiempo en miliseggundos y la frecuencia en Hz.
+En cualquiera de los dos casos, el tiempo registrado se obtiene mediante `GetElapsed()` y `GetFrequency()` que obtienen, respectivamente, el tiempo en milisegundos y la frecuencia en Hz.
 
 ### Constructor
 ```c++
@@ -37,5 +37,5 @@ float GetFrequency() const;
 
 ## Ejemplos
 La librería Stopwatch incluye los siguientes ejemplos para ilustrar su uso.
-* ResetUpdate: Ejemplo de uso mediante Reset() y Update()
-* GetMeasure: Ejemplo de uso mediante GetMeasure()
+* ResetUpdate: Ejemplo de uso mediante `Reset()` y `Update()`
+* Measure: Ejemplo de uso mediante `Measure()`
