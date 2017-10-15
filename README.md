@@ -38,4 +38,48 @@ float GetFrequency() const;
 ## Ejemplos
 La librería Stopwatch incluye los siguientes ejemplos para ilustrar su uso.
 * ResetUpdate: Ejemplo de uso mediante `Reset()` y `Update()`
+```c++
+#include "StopwatchLib.h"
+
+Stopwatch stopwatch;
+
+void setup()
+{
+	Serial.begin(9600);
+}
+
+void loop()
+{
+	//delay(20) simula la tarea a medir
+	stopwatch.Reset();
+	delay(20);
+	stopwatch.Update();
+	
+	Serial.print(stopwatch.GetElapsed()); 
+	Serial.print('\t'); 
+	Serial.println(stopwatch.GetFrequency());
+	Serial.println();
+}
+```
 * Measure: Ejemplo de uso mediante `Measure()`
+```c++
+#include "StopwatchLib.h"
+
+Stopwatch stopwatch;
+
+void setup()
+{
+	Serial.begin(9600);
+}
+
+void loop()
+{
+	//delay(20) simula la tarea a medir
+	stopwatch.Measure([]() {delay(20);});
+	
+	Serial.print(stopwatch.GetElapsed()); 
+	Serial.print('\t'); 
+	Serial.println(stopwatch.GetFrequency());
+	Serial.println();
+}
+```
