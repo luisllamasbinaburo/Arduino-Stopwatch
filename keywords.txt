@@ -16,6 +16,7 @@ GetElapsed KEYWORD2
 GetFrequency KEYWORD2
 Measure	KEYWORD2
 SetTune KEYWORD2
+AutoTune KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
