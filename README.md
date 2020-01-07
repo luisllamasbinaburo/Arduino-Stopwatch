@@ -1,5 +1,5 @@
 # Librería Arduino Stopwatch
-Librería para Arduino que permite registrar el tiempo transcurrido en la ejecución del código, obteniendo el resultado como milisegundos transcurridos o como frecuencia en Hz. Con esta librería podemos medir el tiempo de forma sencilla, liberando de estas funciones al flujo principal.
+Librería para Arduino que permite registrar el tiempo transcurrido en la ejecución del código, obteniendo el resultado como microsegundos transcurridos o como frecuencia en Hz. Con esta librería podemos medir el tiempo de forma sencilla, liberando de estas funciones al flujo principal.
 
 Más información https://www.luisllamas.es/libreria-arduino-stopwatch/
 
@@ -10,7 +10,7 @@ La clase Stopwatch dispone de dos modos de funcionamiento. Uno es mediante el us
 
 El otro modo de funcionamiento es mediante el uso de la función `Measure()`, que recibe como parámetro una funcion `void(*)()` para medir. Stopwatch registra el tiempo empleado para la ejecución de la función pasada como parámetro. 
 
-En cualquiera de los dos casos, el tiempo registrado se obtiene mediante `GetElapsed()` y `GetFrequency()` que obtienen, respectivamente, el tiempo en milisegundos y la frecuencia en Hz.
+En cualquiera de los dos casos, el tiempo registrado se obtiene mediante `GetElapsed()` y `GetFrequency()` que obtienen, respectivamente, el tiempo en microsegundos y la frecuencia en Hz.
 
 ### Constructor
 ```c++
@@ -19,6 +19,9 @@ Stopwatch();
 
 ### Usar Stopwatch
 ```c++
+// Auto tuning without parameter, manual if pass a parameter
+void Tune(unsigned long tune);
+
 // Registra el instante actual como comienzo de la medición
 void Reset();
  
@@ -28,7 +31,7 @@ void Update();
 // Registra la medición de la función pasada como parámetro
 void Measure(StopwatchAction action);
  
-// Obtiene el tiempo transcurrido en milisegundos
+// Obtiene el tiempo transcurrido en microsegundos
 unsigned long GetElapsed() const;
  
 // Obtiene el tiempo transcurrido como frecuencia en Hz
@@ -46,6 +49,8 @@ Stopwatch stopwatch;
 void setup()
 {
 	Serial.begin(9600);
+	// Set microseconds gap between Reset and Update calls
+	stopwatch.Tune(2);
 }
 
 void loop()
@@ -70,6 +75,8 @@ Stopwatch stopwatch;
 void setup()
 {
 	Serial.begin(9600);
+	// Automatic calculation of gap between Reset and Update calls
+	stopwatch.Tune();
 }
 
 void loop()
