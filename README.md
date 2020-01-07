@@ -20,7 +20,7 @@ Stopwatch();
 ### Usar Stopwatch
 ```c++
 // Auto tuning without parameter, manual if pass a parameter
-void Tune();
+void Tune(unsigned long tune);
 
 // Registra el instante actual como comienzo de la medición
 void Reset();
