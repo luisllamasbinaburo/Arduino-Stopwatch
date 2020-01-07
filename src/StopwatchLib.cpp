@@ -41,7 +41,7 @@ void Stopwatch::Measure(StopwatchAction action)
 	Update();
 }
 
-void Stopwatch::Tune(unsigned int tune)
+void Stopwatch::Tune(unsigned long tune)
 {
 	_tuning = tune;
 }
