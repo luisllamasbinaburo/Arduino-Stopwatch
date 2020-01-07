@@ -19,9 +19,6 @@ Stopwatch();
 
 ### Usar Stopwatch
 ```c++
-// Auto tuning without parameter, manual if pass a parameter
-void Tune(unsigned long tune);
-
 // Registra el instante actual como comienzo de la medición
 void Reset();
  
@@ -36,6 +33,12 @@ unsigned long GetElapsed() const;
  
 // Obtiene el tiempo transcurrido como frecuencia en Hz
 float GetFrequency() const;
+
+// Set Millis gap correction
+void Tune(unsigned long tune);
+
+// Auto tune Millis gap correction
+void AutoTUne();
 ```
 
 ## Ejemplos
@@ -49,8 +52,6 @@ Stopwatch stopwatch;
 void setup()
 {
 	Serial.begin(9600);
-	// Set microseconds gap between Reset and Update calls
-	stopwatch.Tune(2);
 }
 
 void loop()
@@ -75,8 +76,9 @@ Stopwatch stopwatch;
 void setup()
 {
 	Serial.begin(9600);
+	
 	// Automatic calculation of gap between Reset and Update calls
-	stopwatch.Tune();
+	stopwatch.AutoTune();
 }
 
 void loop()
