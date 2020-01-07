@@ -41,12 +41,12 @@ void Stopwatch::Measure(StopwatchAction action)
 	Update();
 }
 
-void Stopwatch::Tune(unsigned long tune)
+void Stopwatch::SetTune(unsigned long tune)
 {
 	_tuning = tune;
 }
 
-void Stopwatch::Tune()
+void Stopwatch::AutoTune()
 {
 	unsigned long t1, tdelta, lower = ~0UL;
 	//test the millis timings (autotune)
@@ -58,5 +58,5 @@ void Stopwatch::Tune()
 			lower = tdelta;
 		}
 	}
-	_tuning = lower;
+	SetTine(lower);
 }
