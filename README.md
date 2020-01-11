@@ -35,7 +35,7 @@ unsigned long GetElapsed() const;
 float GetFrequency() const;
 
 // Set Millis gap correction
-void Tune(unsigned long tune);
+void SetTune(unsigned long tune);
 
 // Auto tune Millis gap correction
 void AutoTune();
