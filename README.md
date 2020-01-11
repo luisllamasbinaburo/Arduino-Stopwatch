@@ -38,7 +38,7 @@ float GetFrequency() const;
 void Tune(unsigned long tune);
 
 // Auto tune Millis gap correction
-void AutoTUne();
+void AutoTune();
 ```
 
 ## Ejemplos
