@@ -29,11 +29,12 @@ public:
 	float GetFrequency() const;
 
 	void Measure(StopwatchAction action);
-
+	void SetTune(unsigned long tune);
+	void AutoTune();
 private:
 	unsigned long _lastMicros;
 	unsigned long _elapsed;
-	const unsigned int _tuning = 8;
+	unsigned long _tuning = 0;
 };
 
 #endif
