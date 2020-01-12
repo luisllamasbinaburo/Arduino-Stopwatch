@@ -21,7 +21,8 @@ void Stopwatch::Reset()
 
 void Stopwatch::Update()
 {
-	_elapsed = micros() - _lastMicros - _tuning;
+	_rawElapsed = micros() - _lastMicros;
+	_elapsed= (_rawElapsed >= _tuning) ? _rawElapsed - _tuning : 0;
 }
 
 unsigned long Stopwatch::GetElapsed() const
