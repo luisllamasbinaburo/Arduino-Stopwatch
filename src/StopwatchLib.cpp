@@ -58,5 +58,5 @@ void Stopwatch::AutoTune()
 			lower = tdelta;
 		}
 	}
-	SetTine(lower);
+	SetTune(lower);
 }
