@@ -35,7 +35,7 @@ private:
 	unsigned long _lastMicros;
 	unsigned long _elapsed;
 	unsigned long _rawElapsed;
-	unsigned long _tuning = 0;
+	unsigned long _tuning = 8;
 };
 
 #endif
